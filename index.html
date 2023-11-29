@@ -1,0 +1,126 @@
+<!doctype html>
+
+<head>
+<meta name="viewport" content="width = 960, user-scalable = no" />
+<script type="text/javascript" src="jquery.min.1.7.js"></script>
+<script type="text/javascript" src="modernizr.2.5.3.min.js"></script>
+<link rel="shortcut icon" href="ph/book.PNG"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css"rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+<title>B&W </title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+	<div class="ct" data-aos="zoom-out-down"  data-aos-duration="2000" id ="book" >
+	<img src="pages/logo.png" width="100%" height="100%" />	
+	</div>
+    <script type="text/javascript">
+		const book = document.getElementById("book");
+		book.addEventListener("click",function(){
+			alert("Faites d\351filer les pages du catalogue depuis les extr\351mit\351s");
+
+		});
+	
+	  </script>
+
+      <img src="pages/woman.jpg" alt="" class="bga">
+<audio id="audioPlayer1" >
+    <source src="page-flip-4.mp3">
+</audio>
+
+<audio id="audioPlayer2" >
+    <source src="page-flip-03.mp3">
+</audio>
+
+<script type="text/javascript">
+    function play(idPlayer, control) {
+        var player = document.querySelector('#audioPlayer1');
+       
+        if (player.paused) {
+            player.play();
+          
+        } else {
+            player.pause();
+            
+        }
+    }
+    function play2(idPlayer, control) {
+        var player = document.querySelector('#audioPlayer2');
+       
+        if (player.paused) {
+            player.play();
+          
+        } else {
+            player.pause();
+            
+        }
+    }
+</script>
+      <div class="flipbook-viewport" >
+	<div class="container"data-aos="fade-up"  data-aos-duration="2000">
+		<div class="flipbook control" >
+			<div style="background-image:url(pages/1.png)"> <div onclick="play('audioPlayer', this)" class="flip1"></div> <div onclick="play('audioPlayer', this)" class="flip2"></div></div>
+			<div style="background-image:url(pages/3.png)"> <div onclick="play('audioPlayer', this)" class="flip1"></div> <div onclick="play('audioPlayer', this)" class="flip2"></div></div>
+            <div style="background-image:url(pages/4.png)"><div onclick="play('audioPlayer', this)" class="flip3"></div> <div onclick="play('audioPlayer', this)" class="flip4"></div></div>
+			<div style="background-image:url(pages/5.png)"><div onclick="play2('audioPlayer', this)" class="flip1"></div> <div onclick="play2('audioPlayer', this)" class="flip2"></div></div>
+			<div style="background-image:url(pages/6.png)"><div onclick="play2('audioPlayer', this)" class="flip3"></div> <div onclick="play2('audioPlayer', this)" class="flip4"></div></div>
+			<div style="background-image:url(pages/7.png)"><div onclick="play('audioPlayer', this)" class="flip1"></div> <div onclick="play('audioPlayer', this)" class="flip2"></div></div>
+			<div style="background-image:url(pages/8.png)"><div onclick="play('audioPlayer', this)" class="flip3"></div> <div onclick="play('audioPlayer', this)" class="flip4"></div></div>
+			<div style="background-image:url(pages/9.png)"><div onclick="play2('audioPlayer', this)" class="flip1"></div> <div onclick="play2('audioPlayer', this)" class="flip2"></div></div>
+			<div style="background-image:url(pages/10.png)"><div onclick="play2('audioPlayer', this)" class="flip3"></div> <div onclick="play2('audioPlayer', this)" class="flip4"></div></div>
+			<div style="background-image:url(pages/11.png)"><div onclick="play('audioPlayer', this)" class="flip1"></div> <div onclick="play('audioPlayer', this)" class="flip2"></div></div>
+			</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+function loadApp() {
+
+	// Create the flipbook
+
+	$('.flipbook').turn({
+			// Width
+
+			width:922,
+			
+			// Height
+
+			height:600,
+
+			// Elevation
+
+			elevation: 50,
+			
+			// Enable gradients
+
+			gradients: true,
+			
+			// Auto center this flipbook
+
+			autoCenter: true
+
+	});
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['turn.js'],
+	nope: ['turn.html4.min.js'],
+	both: ['css/basic.css'],
+	complete: loadApp
+});
+
+</script>
+
+</body>
+</html>
+ <script>
+      AOS.init();
+    </script>
